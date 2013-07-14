@@ -18,7 +18,7 @@
 	<script>
 
 		function onEachFeature(feature, layer) {
-			var popupContent = feature.properties.PopupInfo;
+			var popupContent = feature.properties.PopupInfo + "<br>" + feature.properties.CONTACT;
 
 			if (feature.properties && feature.properties.popupContent) {
 				popupContent += feature.properties.popupContent;
