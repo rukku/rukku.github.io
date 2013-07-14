@@ -1,66 +1,69 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Responder Database</title>
-        <meta charset="utf-8" />
+    <title>Responders</title>
+    <meta charset="utf-8" />
 
-        <meta name="viewpoer" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" type="text/css" href="dist/leaflet.css">
+    <link rel="stylesheet" href="dist/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="dist/leaflet.ie.css" /><![endif]-->
 </head>
 <body>
-    <p>ARMM</p>
-    <div id="map" style="width: 600px; height 400px"></div>
+    <div id="map" style="width: 100%; height: 500px"></div>
 
     <script src="dist/leaflet.js"></script>
-    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.1.3"></script>
-    <script type="text/javascript">
-        function layermapInit(map) {
-            
-            L.tileLayer('http://{s}.tile.cloudmade.com/e0651c1abdee4aa8bc568ecb43772738/997/256/{z}/{x}/{y}.png', {
-                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                        maxZoom: 18
-            }).addTo(map);
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
 
-            
-            var nexrad = L.tileLayer.wms("http://54.251.35.218:8080/geoserver/wms", {
-                layers: 'ocd:ARMM',
-                format: 'image/png',
-                transparent: true,
-                attribution: "ARMM data"
-            });
+        function onEachFeature(feature, layer) {
+            var popupContent = feature.properties.PopupInfo + "<br>" + feature.properties.CONTACT;
 
+            if (feature.properties && feature.properties.popupContent) {
+                popupContent += feature.properties.popupContent;
+            }
 
-            nexrad.addTo(map);
-            map.fitBounds(nexrad.getBounds());
+            layer.bindPopup(popupContent);
+        }
 
-            //var stamen = new L.StamenTileLayer("toner");
-            
-            //stamen.addTo(map);
+        var map = L.map('map').setView([7, 124], 8);
 
-            //    e0651c1abdee4aa8bc568ecb43772738
-            /*
+        L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+            maxZoom: 13,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+        }).addTo(map);
 
+        // Pulls GeoJSON data and adds layer to the basemap
+         jQuery.getJSON('geometry.json', function(geojsonFeature){
+                var myLayer = L.geoJson(geojsonFeature, {
 
-            var mapquestUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
-            subDomains = ['otile1','otile2','otile3','otile4'],
-            mapquestAttrib = 'Data, imagery and map information provided by <a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>,
-            <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.
-            var mapquest = new L.TileLayer(mapquestUrl, {maxZoom: 18, attribution: mapquestAttrib, subdomains: subDomains});
-            */
-            
-            // Pulls GeoJSON data and adds layer to the basemap
-            /*
-            $.getJSON('http://localhost:8000/media/layers/armm/raw/geometry.json', function(geojsonFeature){
-                var myLayer = L.geoJson().addTo(map);
-                myLayer.addData(geojsonFeature);
+            style: function (feature) {
+                return feature.properties && feature.properties.style;
+            },
+
+            onEachFeature: onEachFeature,
+
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, {
+                    radius: 5,
+                    fillColor: "#ff7800",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                });
+            }
+        }).addTo(map);
+                
+
+               // myLayer.addData(geojsonFeature);
 
 
                 // Zooms map to geoJSON layer's bounds
                 map.fitBounds(myLayer.getBounds());
-            }); */
-        }
-    </script>
+            });
 
+    </script>
 </body>
 </html>
