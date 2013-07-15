@@ -10,6 +10,10 @@
     <script src="dist/leaflet.js"></script>
     <script src="js/jquery-1.10.2.min.js"></script>
 
+    <script src="responders.js"></script>
+
+    <script src="dist/leaflet-knn.min.js"></script>
+
     <link rel="stylesheet" href="dist/MarkerCluster.css" />
     <link rel="stylesheet" href="dist/MarkerCluster.Default.css" />
     <script src="dist/leaflet.markercluster-src.js"></script>
@@ -73,9 +77,31 @@
             markers.addLayer(myLayer);
             map.addLayer(markers);
 
-            
             map.fitBounds(myLayer.getBounds());
-        
+            
+
+            //set point
+
+            var nearest = leafletKnn(myLayer).nearest([7, 124], 1);
+            
+            //map.fitBounds(nearest[0].getBounds());
+
+            //center
+            map.setView(nearest[0], 10);
+            map.panTo(nearest[0]);
+
+
+            //draw line from nearest to point
+
+            /*
+            if (nearest.length) {
+                alert(nearest[0].layer.feature.properties.PopupInfo); 
+            } else {
+                alert("It's broken");
+            }
+            */
+
+                       
         });
 
     </script>
