@@ -7,21 +7,26 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--Loads the leaflet js-->
     <script src="dist/leaflet.js"></script>
     <script src="js/jquery-1.10.2.min.js"></script>
 
     <script src="responders.js"></script>
 
+    <!--For the nearest neighbor computations-->
     <script src="dist/leaflet-knn.min.js"></script>
 
+    <!--Loads the Leaflet plugins that does the clustering.-->
     <link rel="stylesheet" href="dist/MarkerCluster.css" />
     <link rel="stylesheet" href="dist/MarkerCluster.Default.css" />
     <script src="dist/leaflet.markercluster-src.js"></script>
 
+    <!--Leaflet stylesheets-->
     <link rel="stylesheet" href="dist/leaflet.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="dist/leaflet.ie.css" /><![endif]-->
 </head>
 <body>
+
     <img src = "ndrrmc/banner.jpg"
          alt = "NDRRMC Banner"
          align="middle" />
@@ -30,6 +35,7 @@
 
     <script>
 
+        //Handle the popups
         function onEachFeature(feature, layer) {
             var popupContent = "<p><b>" + feature.properties.PopupInfo + "</b>" + "<br>" + feature.properties.CONTACT + "</p>";
 
@@ -40,14 +46,16 @@
             layer.bindPopup(popupContent);
         }
 
+        //Load the map
         var map = L.map('map').setView([7, 124], 8);
 
+        //Add background layer
         L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
             maxZoom: 18,
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
         }).addTo(map);
 
-
+        //Set icons
         var helpIcon = L.icon({
             iconUrl: 'help.png',
             iconSize: [30, 30],
@@ -81,9 +89,9 @@
             
 
             //set point
-
+            /*
             var nearest = leafletKnn(myLayer).nearest([7, 124], 1);
-            
+            /*
             //map.fitBounds(nearest[0].getBounds());
 
             //center

@@ -18,7 +18,7 @@
 	<script>
 
 		function onEachFeature(feature, layer) {
-			var popupContent = feature.properties.PopupInfo + "<br>" + feature.properties.CONTACT;
+			var popupContent = "";
 
 			if (feature.properties && feature.properties.popupContent) {
 				popupContent += feature.properties.popupContent;
@@ -35,7 +35,7 @@
 		}).addTo(map);
 
         // Pulls GeoJSON data and adds layer to the basemap
-         jQuery.getJSON('geometry.json', function(geojsonFeature){
+         jQuery.getJSON('881953.json', function(geojsonFeature){
                 var myLayer = L.geoJson(geojsonFeature, {
 
 			style: function (feature) {
@@ -57,7 +57,7 @@
 		}).addTo(map);
                 
 
-               // myLayer.addData(geojsonFeature);
+                myLayer.addData(geojsonFeature);
 
 
                 // Zooms map to geoJSON layer's bounds
