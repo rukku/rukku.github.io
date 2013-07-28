@@ -266,6 +266,8 @@ window.onscroll = _(function() {
 setActive(0, false);
 
 // Add Ikot Route
+var ikotroute = mapbox.markers.layer().features([ikot]);
+map.addLayer(ikotroute);
 //var myLayer = L.geoJson(ikot).addTo(map);
 </script>
 
