@@ -1,5 +1,9 @@
 var ikot = {
-      "properties": { "id": "ikot"},
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -146,3 +150,5 @@ var ikot = {
         ]
       }
     }
+  ]
+}
