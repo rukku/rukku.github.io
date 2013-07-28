@@ -10,6 +10,14 @@
 <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
 <script type="text/javascript" src="routes.js"></script>
 <style>
+.d3-vec { position:absolute; }
+path {
+  fill: #000;
+  fill-opacity: .05;
+  stroke: yellow;
+  stroke-opacity: 0.50;
+  stroke-width: 15.0px;
+  }
 body {
   margin:0px;
   padding:0px;
@@ -143,6 +151,7 @@ body.section-0 #map { opacity:0.5; }
 </style>
 </head>
 <body class='section-0'>
+<script src='http://d3js.org/d3.v2.min.js'></script>
 
 <div id='pane'><div id='map'></div></div>
 
@@ -168,6 +177,52 @@ body.section-0 #map { opacity:0.5; }
 </article>
 
 <script>
+//For the D3 layer
+function d3layer() {
+    var f = {}, bounds, feature, collection;
+    var div = d3.select(document.body)
+        .append("div")
+        .attr('class', 'd3-vec'),
+        svg = div.append('svg'),
+        g = svg.append("g");
+
+    f.parent = div.node();
+
+    f.project = function(x) {
+      var point = f.map.locationPoint({ lat: x[1], lon: x[0] });
+      return [point.x, point.y];
+    };
+
+    var first = true;
+    f.draw = function() {
+      first && svg.attr("width", f.map.dimensions.x)
+          .attr("height", f.map.dimensions.y)
+          .style("margin-left", "0px")
+          .style("margin-top", "0px") && (first = false);
+
+      path = d3.geo.path().projection(f.project);
+      feature.attr("d", path);
+    };
+
+    f.data = function(x) {
+        collection = x;
+        bounds = d3.geo.bounds(collection);
+        feature = g.selectAll("path")
+            .data(collection.features)
+            .enter().append("path");
+        return f;
+    };
+
+    f.extent = function() {
+        return new MM.Extent(
+            new MM.Location(bounds[0][1], bounds[0][0]),
+            new MM.Location(bounds[1][1], bounds[1][0]));
+    };
+    return f;
+}
+
+
+
 var geojson = [
   { "geometry": { "type": "Point", "coordinates": [121.05319976,14.65365866] },
     "properties": { "id": "cover", "zoom": 13 } },
@@ -266,7 +321,7 @@ window.onscroll = _(function() {
 setActive(0, false);
 
 // Add Ikot Route
-var ikotroute = mapbox.markers.layer().features([ikot]);
+var ikotroute = d3layer().data(ikot);
 map.addLayer(ikotroute);
 //var myLayer = L.geoJson(ikot).addTo(map);
 </script>
