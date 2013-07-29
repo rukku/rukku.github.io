@@ -138,9 +138,9 @@ p { margin:0px; }
 .spot-as.active { background-position:-260px -120px; }
 .spot-music { background-position:-780px 0px; }
 .spot-music.active { background-position:-390px -120px; }
-.spot-cmc { background-position:-520px -120px; }
+.spot-cmc { background-position:-780px 0px; }
 .spot-cmc.active { background-position:-520px -120px; }
-.spot-se { background-position:-650px -120px; }
+.spot-se { background-position:-780px 0px; }
 .spot-se.active { background-position:-650px -120px; }
 .spot-cba { background-position:-780px 0px; }
 .spot-cba.active { background-position:-780px -120px; }
