@@ -103,12 +103,38 @@ p { margin:0px; }
   background:url(7292013.png) 120px 120px no-repeat;
   position:absolute;
   }
-.spot-cover { display:none; }
-.spot-philcoa { background-position:-130px 0px; }
-.spot-philcoa.active { background-position:-130px -0px; }
-.spot-cal { background-position:-260px 120px; }
-.spot-cal.active { background-position:-260px -120px; }
 
+/*Transpo stops*/
+.spot-philcoa { background-position:-260px 0px; }
+.spot-philcoa.active { background-position:-260px -0px; }
+.spot-mrt { background-position:-390px 0px; }
+.spot-mrt.active { background-position:-390px -0px; }
+.spot-lrt { background-position:-390px 0px; }
+.spot-lrt.active { background-position:-390px -0px; }
+.spot-fairview { background-position:-520px 0px; }
+.spot-fairview.active { background-position:-520px -0px; }
+.spot-marikina { background-position:-650px 0px; }
+.spot-marikina.active { background-position:-650px -0px; }
+
+
+/*Main stops*/
+.spot-cover { display:none; }
+.spot-cal { background-position:-130px -120px; }
+.spot-cal.active { background-position:-130px -120px; }
+.spot-as { background-position:-390px -120px; }
+.spot-as.active { background-position:-390px -120px; }
+.spot-london-bridge { background-position:-390px 0px; }
+.spot-london-bridge.active { background-position:-390px -120px; }
+.spot-woolwich { background-position:-520px 0px; }
+.spot-woolwich.active { background-position:-520px -120px; }
+.spot-gloucester { background-position:-650px 0px; }
+.spot-gloucester.active { background-position:-650px -120px; }
+.spot-caulfield-gardens { background-position:-780px 0px; }
+.spot-caulfield-gardens.active { background-position:-780px -120px; }
+.spot-telegraph { background-position:-910px 0px; }
+.spot-telegraph.active { background-position:-910px -120px; }
+.spot-charing-cross { background-position:-1040px 0px; }
+.spot-charing-cross.active { background-position:-1040px -120px; }
 
 /* Distinguish the "cover page" visually other sections. */
 body.section-0 #map { opacity:0.5; }
@@ -224,7 +250,7 @@ function d3layer() {
 
 var geojson = [
   { "geometry": { "type": "Point", "coordinates": [121.05319976,14.65365866] },
-    "properties": { "id": "cover", "zoom": 13 } },
+    "properties": { "id": "cover", "zoom": 15 } },
   { "geometry": { "type": "Point", "coordinates": [ 121.05319976,14.65365866] },
     "properties": { "id": "philcoa" } },
   { "geometry": { "type": "Point", "coordinates": [  121.06741011,14.65255839] },
