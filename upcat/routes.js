@@ -992,7 +992,7 @@ var green = {
       }
     },
     {
-      "type": "Feature"
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "LineString",
@@ -1275,9 +1275,7 @@ var green = {
     }
   ]
 }
-
-  ]
-};
+;
 
 var geojson = [
     {
