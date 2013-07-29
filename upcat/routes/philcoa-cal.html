@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'/>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src='http://underscorejs.org/underscore-min.js'></script>
+<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+<script type="text/javascript" src="../routes.js"></script>
+<style>
+.d3-vec { position:absolute; }
+path {
+  fill: #000;
+  fill-opacity: .05;
+  stroke: green;
+  stroke-opacity: 0.50;
+  stroke-width: 15.0px;
+  }
+body {
+  margin:0px;
+  padding:0px;
+  font:normal 15px/20px Arial,sans-serif;
+  background:#fff;
+  }
+
+article {
+  width:33.3333%;
+  min-width:320px;
+  position:relative;
+  padding-top:40px;
+  padding-bottom:33.3333%;
+  }
+section {
+  padding:40px;
+  margin-left:40px;
+  position:relative;
+  transition:background 500ms, color 500ms;
+  -moz-transition:background 500ms, color 500ms;
+  -webkit-transition:background 500ms, color 500ms;
+  }
+section,
+section a {
+  color:#888;
+  color:rgba(128,128,128,0);
+  text-decoration:none;
+  text-shadow:rgba(64,64,64,1) 0px 0px 4px;
+  }
+section.active {
+  background:maroon;
+  color:#eee;
+  }
+section.active a { color:#eee; }
+section.active small { color:#aaa; }
+h1 { font-size:2em; line-height:1em; }
+h2 { font-size:1.3333em; }
+h1,h2 { margin:0px 0px 10px; }
+p { margin:0px; }
+
+.scroll {
+  position:absolute;
+  right:0px; bottom:0px;
+  font-size:10px;
+  text-transform:uppercase;
+  padding:5px 10px;
+  }
+.colophon {
+  display:block;
+  margin-top:10px;
+  }
+
+.cover:before {
+  content:'';
+  display:block;
+  width:120px; height:120px;
+  margin:0px auto 20px;
+  }
+.cover.active:before { background:url(../7292013.png) 0px -120px no-repeat; }
+
+#pane {
+  position:fixed;
+  top:0px;
+  bottom:0px;
+  right:0px;
+  width:66.6666%;
+  }
+#map  {
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  width:200%;
+  left:-50%;
+  transition:opacity 250ms;
+  -moz-transition:opacity 250ms;
+  -webkit-transition:opacity 250ms;
+  }
+
+.spot {
+  width:120px;
+  height:120px;
+  margin:-60px 0px 0px -60px;
+  background:url(../7292013.png) 120px 120px no-repeat;
+  position:absolute;
+  }
+
+/*Main stops*/
+.spot-cover { display:none; }
+
+/*Transpo stops*/
+.spot-philcoa { background-position:-260px 0px; }
+.spot-philcoa.active { background-position:-260px -0px; }
+.spot-mrt { background-position:-390px 0px; }
+.spot-mrt.active { background-position:-390px -0px; }
+.spot-lrt { background-position:-390px 0px; }
+.spot-lrt.active { background-position:-390px -0px; }
+.spot-fairview { background-position:-520px 0px; }
+.spot-fairview.active { background-position:-520px -0px; }
+.spot-marikina { background-position:-650px 0px; }
+.spot-marikina.active { background-position:-650px -0px; }
+
+
+.spot-cal { background-position:-130px -120px; }
+.spot-cal.active { background-position:-130px -120px; }
+.spot-as { background-position:-260px -120px; }
+.spot-as.active { background-position:-260px -120px; }
+.spot-music { background-position:-390px 0px; }
+.spot-music.active { background-position:-390px -120px; }
+.spot-cmc { background-position:-520px -120px; }
+.spot-cmc.active { background-position:-520px -120px; }
+.spot-econ { background-position:-650px -120px; }
+.spot-econ.active { background-position:-650px -120px; }
+.spot-cba { background-position:-780px -120px; }
+.spot-cba.active { background-position:-780px -120px; }
+.spot-arki { background-position:-910px -120px; }
+.spot-arki.active { background-position:-910px -120px; }
+.spot-engg { background-position:-1040px -120px; }
+.spot-engg.active { background-position:-1040px -120px; }
+.spot-solair { background-position:-1170px -120px; }
+.spot-solair.active { background-position:-1170px -120px; }
+.spot-ncpag { background-position:-1300px -120px; }
+.spot-ncpag.active { background-position:-1300px -120px; }
+
+
+
+/* Distinguish the "cover page" visually other sections. */
+body.section-0 #map { opacity:0.5; }
+
+@media (max-width:640px) {
+  body {
+    font-size:12px;
+    line-height:16px;
+    }
+  article {
+    width:100%;
+    min-width:100%;
+    padding-top:0px;
+    padding-bottom:200%;
+    }
+  section {
+    text-shadow:none;
+    margin-left:0px;
+    padding:30px;
+    }
+  section.active {
+    position:fixed;
+    top:0px; left:0px; right:0px;
+    }
+  #pane { width:100%; }
+  #map  {
+    bottom:0%;
+    left:0%;
+    width:100%;
+    height:150%;
+    }
+  }
+
+@media (min-width:1280px) {
+  body {
+    font-size:18px;
+    line-height:24px;
+    }
+  }
+</style>
+</head>
+<body class='section-0'>
+<script src='http://d3js.org/d3.v2.min.js'></script>
+
+<div id='pane'><div id='map'></div></div>
+
+<article>
+  <section id='cover' class='cover active'>
+    <h1>Philcoa to CAL</h1>
+    <p>BEST-Transit</p>
+    <small class='scroll'>Scroll ▼</small>
+  </section>
+  <section id='philcoa'>
+    <h2>PHILCOA</h2>
+    <p>Ride the UP Philcoa jeep</p>
+  </section>
+  <section id='cal'>
+    <h2>College of Arts and Letters</h2>
+    <p>Stop at the Faculty Center and walk to the CAL Building.</p>
+    <br>
+    <img src="../images/cal.png" style="padding:1px;border:thick solid black;">
+     <small class='colophon'>
+      Map data &copy; <a href='http://openstreetmap.org/copyright'>OpenStreetMap Contributors</a><br/>
+      Map design &copy; <a href='http://mapbox.com/about/maps/'>MapBox</a>
+    </small>
+  </section>
+</article>
+
+<script>
+//For the D3 layer
+function d3layer() {
+    var f = {}, bounds, feature, collection;
+    var div = d3.select(document.body)
+        .append("div")
+        .attr('class', 'd3-vec'),
+        svg = div.append('svg'),
+        g = svg.append("g");
+
+    f.parent = div.node();
+
+    f.project = function(x) {
+      var point = f.map.locationPoint({ lat: x[1], lon: x[0] });
+      return [point.x, point.y];
+    };
+
+    var first = true;
+    f.draw = function() {
+      first && svg.attr("width", f.map.dimensions.x)
+          .attr("height", f.map.dimensions.y)
+          .style("margin-left", "0px")
+          .style("margin-top", "0px") && (first = false);
+
+      path = d3.geo.path().projection(f.project);
+      feature.attr("d", path);
+    };
+
+    f.data = function(x) {
+        collection = x;
+        bounds = d3.geo.bounds(collection);
+        feature = g.selectAll("path")
+            .data(collection.features)
+            .enter().append("path");
+        return f;
+    };
+
+    f.extent = function() {
+        return new MM.Extent(
+            new MM.Location(bounds[0][1], bounds[0][0]),
+            new MM.Location(bounds[1][1], bounds[1][0]));
+    };
+    return f;
+}
+
+var tiles = mapbox.layer().tilejson({
+  tiles: [ "http://a.tiles.mapbox.com/v3/examples.map-liczq28b/{z}/{x}/{y}.png" ]
+});
+var spots = mapbox.markers.layer()
+  // Load up markers from geojson data.
+  .features(geojson)
+  // Define a new factory function. Takes geojson input and returns a
+  // DOM element that represents the point.
+  .factory(function(f) {
+    var el = document.createElement('div');
+    el.className = 'spot spot-' + f.properties.id;
+    return el;
+  });
+// Creates the map with tile and marker layers and
+// no input handlers (mouse drag, scrollwheel, etc).
+var map = mapbox.map('map', [spots], null, []);
+
+//Add baselayer
+map.addLayer(new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/examples.map-szwdot65/{Z}/{X}/{Y}.png'));
+map.ui.attribution.add()
+    .content('Map tiles by <a href="http://stamen.com">Mapbox</a>, under' +
+    ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
+    ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
+// Add Jeep Route
+var jeep = d3layer().data(green);
+map.addLayer(jeep);
+
+map.addLayer(spots);
+
+// Array of story section elements.
+var sections = document.getElementsByTagName('section');
+
+// Array of marker elements with order matching section elements.
+var markers = _(sections).map(function(section) {
+  return _(spots.markers()).find(function(m) {
+    return m.data.properties.id === section.id;
+  });
+});
+
+// Helper to set the active section.
+var setActive = function(index, ease) {
+  // Set active class on sections, markers.
+  _(sections).each(function(s) { s.className = s.className.replace(' active', '') });
+  _(markers).each(function(m) { m.element.className = m.element.className.replace(' active', '') });
+  sections[index].className += ' active';
+  markers[index].element.className += ' active';
+
+  // Set a body class for the active section.
+  document.body.className = 'section-' + index;
+
+  // Ease map to active marker.
+  if (!ease) {
+    map.centerzoom(markers[index].location, markers[index].data.properties.zoom||20);
+  } else {
+    map.ease.location(markers[index].location).zoom(markers[index].data.properties.zoom||20).optimal(0.5, 2);
+  }
+
+  return true;
+};
+
+// Bind to scroll events to find the active section.
+window.onscroll = _(function() {
+  // IE 8
+  if (window.pageYOffset === undefined) {
+    var y = document.documentElement.scrollTop;
+    var h = document.documentElement.clientHeight;
+  } else {
+    var y = window.pageYOffset;
+    var h = window.innerHeight;
+  }
+
+  // If scrolled to the very top of the page set the first section active.
+  if (y === 0) return setActive(0, true);
+
+  // Otherwise, conditionally determine the extent to which page must be
+  // scrolled for each section. The first section that matches the current
+  // scroll position wins and exits the loop early.
+  var memo = 0;
+  var buffer = (h * 0.3333);
+  var active = _(sections).any(function(el, index) {
+    memo += el.offsetHeight;
+    return y < (memo-buffer) ? setActive(index, true) : false;
+  });
+
+  // If no section was set active the user has scrolled past the last section.
+  // Set the last section active.
+  if (!active) setActive(sections.length - 1, true);
+}).debounce(10);
+
+// Set map to first section.
+setActive(0, false);
+
+
+//var myLayer = L.geoJson(ikot).addTo(map);
+</script>
+
+</body>
+</html>
