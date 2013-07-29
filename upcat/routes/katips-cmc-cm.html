@@ -9,177 +9,15 @@
 <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
 <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
 <script type="text/javascript" src="../routes.js"></script>
+<link href='style.css' rel='stylesheet' />
 <style>
 .d3-vec { position:absolute; }
 path {
   fill: #000;
   fill-opacity: .05;
-  stroke: yellow;
+  stroke: red;
   stroke-opacity: 0.50;
   stroke-width: 15.0px;
-  }
-body {
-  margin:0px;
-  padding:0px;
-  font:normal 15px/20px Arial,sans-serif;
-  background:#fff;
-  }
-
-article {
-  width:33.3333%;
-  min-width:320px;
-  position:relative;
-  padding-top:40px;
-  padding-bottom:33.3333%;
-  }
-section {
-  padding:40px;
-  margin-left:40px;
-  position:relative;
-  transition:background 500ms, color 500ms;
-  -moz-transition:background 500ms, color 500ms;
-  -webkit-transition:background 500ms, color 500ms;
-  }
-section,
-section a {
-  color:#888;
-  color:rgba(128,128,128,0);
-  text-decoration:none;
-  text-shadow:rgba(64,64,64,1) 0px 0px 4px;
-  }
-section.active {
-  background:maroon;
-  color:#eee;
-  }
-section.active a { color:#eee; }
-section.active small { color:#aaa; }
-h1 { font-size:2em; line-height:1em; }
-h2 { font-size:1.3333em; }
-h1,h2 { margin:0px 0px 10px; }
-p { margin:0px; }
-
-.scroll {
-  position:absolute;
-  right:0px; bottom:0px;
-  font-size:10px;
-  text-transform:uppercase;
-  padding:5px 10px;
-  }
-.colophon {
-  display:block;
-  margin-top:10px;
-  }
-
-.cover:before {
-  content:'';
-  display:block;
-  width:120px; height:120px;
-  margin:0px auto 20px;
-  }
-.cover.active:before { background:url(../7292013.png) 0px -120px no-repeat; }
-
-#pane {
-  position:fixed;
-  top:0px;
-  bottom:0px;
-  right:0px;
-  width:66.6666%;
-  }
-#map  {
-  position:absolute;
-  top:0px;
-  bottom:0px;
-  width:200%;
-  left:-50%;
-  transition:opacity 250ms;
-  -moz-transition:opacity 250ms;
-  -webkit-transition:opacity 250ms;
-  }
-
-.spot {
-  width:120px;
-  height:120px;
-  margin:-60px 0px 0px -60px;
-  background:url(../7292013.png) 120px 120px no-repeat;
-  position:absolute;
-  }
-
-/*Main stops*/
-.spot-cover { display:none; }
-
-/*Transpo stops*/
-.spot-philcoa { background-position:-260px 0px; }
-.spot-philcoa.active { background-position:-260px -0px; }
-.spot-mrt { background-position:-390px 0px; }
-.spot-mrt.active { background-position:-390px -0px; }
-.spot-lrt { background-position:-390px 0px; }
-.spot-lrt.active { background-position:-390px -0px; }
-.spot-fairview { background-position:-520px 0px; }
-.spot-fairview.active { background-position:-520px -0px; }
-.spot-marikina { background-position:-650px 0px; }
-.spot-marikina.active { background-position:-650px -0px; }
-
-
-.spot-cal { background-position:-130px -120px; }
-.spot-cal.active { background-position:-130px -120px; }
-.spot-as { background-position:-260px -120px; }
-.spot-as.active { background-position:-260px -120px; }
-.spot-music { background-position:-390px 0px; }
-.spot-music.active { background-position:-390px -120px; }
-.spot-cmc { background-position:-520px -120px; }
-.spot-cmc.active { background-position:-520px -120px; }
-.spot-econ { background-position:-650px -120px; }
-.spot-econ.active { background-position:-650px -120px; }
-.spot-cba { background-position:-780px -120px; }
-.spot-cba.active { background-position:-780px -120px; }
-.spot-arki { background-position:-910px -120px; }
-.spot-arki.active { background-position:-910px -120px; }
-.spot-engg { background-position:-1040px -120px; }
-.spot-engg.active { background-position:-1040px -120px; }
-.spot-solair { background-position:-1170px -120px; }
-.spot-solair.active { background-position:-1170px -120px; }
-.spot-ncpag { background-position:-1300px -120px; }
-.spot-ncpag.active { background-position:-1300px -120px; }
-
-
-
-/* Distinguish the "cover page" visually other sections. */
-body.section-0 #map { opacity:0.5; }
-
-@media (max-width:640px) {
-  body {
-    font-size:12px;
-    line-height:16px;
-    }
-  article {
-    width:100%;
-    min-width:100%;
-    padding-top:0px;
-    padding-bottom:200%;
-    }
-  section {
-    text-shadow:none;
-    margin-left:0px;
-    padding:30px;
-    }
-  section.active {
-    position:fixed;
-    top:0px; left:0px; right:0px;
-    }
-  #pane { width:100%; }
-  #map  {
-    bottom:0%;
-    left:0%;
-    width:100%;
-    height:150%;
-    }
-  }
-
-@media (min-width:1280px) {
-  body {
-    font-size:18px;
-    line-height:24px;
-    }
   }
 </style>
 </head>
@@ -189,25 +27,71 @@ body.section-0 #map { opacity:0.5; }
 <div id='pane'><div id='map'></div></div>
 
 <article>
-  <section id='cover' class='cover active'>
-    <h1>Philcoa to CAL</h1>
+
+<section id='cover' class='cover active'>
+    <h1>LRT-2 Katipunan or Marikina <br><br> to College of Music or College of Mass Communication<br><br></h1>
     <p>BEST-Transit</p>
-    <small class='scroll'>Scroll ▼</small>
+    <small class='scroll'>Scroll ▼</small>  
   </section>
-  <section id='philcoa'>
-    <h2>PHILCOA</h2>
-    <p>Ride the UP Philcoa jeep</p>
-  </section>
-  <section id='cal'>
-    <h2>College of Arts and Letters</h2>
-    <p>Stop at the Faculty Center and walk to the CAL Building.</p>
+
+  <section id='katips'>
+    <h2>LRT-2 Katipunan or Marikina </h2>
+    <p align=”justify”>Go to the Katipunan Jeepney Terminal</p>
+   <br>
+   <u>If you are from Marikina:</u>
+    
     <br>
-    <img src="../images/cal.png" style="padding:1px;border:thick solid black;">
-     <small class='colophon'>
-      Map data &copy; <a href='http://openstreetmap.org/copyright'>OpenStreetMap Contributors</a><br/>
-      Map design &copy; <a href='http://mapbox.com/about/maps/'>MapBox</a>
-    </small>
-  </section>
+
+Riding a jeep from Marikina, alight at Aurora Blvd corner Katipunan Road.  Then walk towards the UP-Katipunan Jeepney Terminal (this is under the Katipunan flyover). 
+
+    <br><br>
+   <u>If you have ridden the LRT-2:</u>
+  
+    <br>
+
+From the LRT-2 Station at Katipunan, make sure you go out through the North Exit so that you’ll end up at the opposite side of PSBA and the same block as St. Bridget. Walk towards the Katipunan Flyover; underneath it is the UP-Katipunan Jeepney Terminal.
+
+    <br><br>
+
+At the UP-Katipunan Jeep Terminal, you’ll see 2 queues, both calling UP. Make sure you ride the jeep which goes inside the campus (the jeep line closer to Ministop). To be sure, confirm with the jeep dispatcher that the jeep goes inside UP.  (The other jeep queue that is farther from ministop goes to Tandang Sora passing-by MWSS and will not go inside UP.)  Then give your fare to the dispatcher before going inside the jeep.
+
+   <br>
+Fare: 8:00
+
+   </p>
+   <br>
+   </section>
+
+  <section id='theatre'>
+    <h2>College of Music or College of Mass Communication</h2>
+    <p align=”justify”>
+    
+    <br>
+
+The UP-Katipunan jeep enters UP Diliman through the gate opposite MWSS (Manila Water).  The jeep is now on the Magsaysay Ave. Road.  Then you will pass by Asian Studies Center (Romulo Hall) at your left.  After two turns. the jeep passes-by several commercial establishments like UP Health Service, Parish of Holy Sacrifice, and University Shopping Center, as well as Residence Halls like Kalayaan, Sanggumay.  Continuing, the jeep will eventually reach the Osmeña Ave. of the Academic Oval (oval-shaped one-way busy thoroughfare lined by lots of huge trees).  
+
+     <br><br>
+    
+<u> If you’re going to the College of Music (Abelardo Hall): </u>
+
+    <br>
+
+Looking at you’re right, first the jeep the will pass-by the Tennis Courts (with tall green fences), next the Film Institute, followed by the Carillon (tower-like structure with bells), then the University Theater (Villamor Hall).  A few meters from the theater’s from the signage, there is a jeepney stop with waiting shed; alight the jeep at this point.  You are now in-between Abelardo Hall (College of Music) and Villamor Hall.  Facing the waiting shed, the building at your right is Villamor Hall while the building at your left is Abelardo Hall.  Then walk towards Abelardo Hall.
+
+     <br><br>
+
+<u>If you’re going to the College of Mass Communication (Plaridel Hall):</u>
+
+      <br>
+
+Alight from the jeep at the jeepney stop with waiting shed in-between Abelardo Hall (College of Music) and Villamor Hall.  Facing the waiting shed, the building at your right is Villamor Hall while the building at your left is Abelardo Hall.  Now on the pathway, walk past Abelardo Hall to the junction of Osmeña Ave and Ylanan Road.  Walk across Ylanan Road to Plaridel Hall.  
+
+      <br>
+
+</p>
+</section>
+
+
 </article>
 
 <script>
@@ -270,7 +154,7 @@ var spots = mapbox.markers.layer()
   });
 // Creates the map with tile and marker layers and
 // no input handlers (mouse drag, scrollwheel, etc).
-var map = mapbox.map('map', [spots], null);
+var map = mapbox.map('map', [spots], null, []);
 
 //Add baselayer
 map.addLayer(new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/examples.map-szwdot65/{Z}/{X}/{Y}.png'));
@@ -279,7 +163,7 @@ map.ui.attribution.add()
     ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
     ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
 // Add Jeep Route
-var jeep = d3layer().data(green);
+var jeep = d3layer().data(katips);
 map.addLayer(jeep);
 
 map.addLayer(spots);
