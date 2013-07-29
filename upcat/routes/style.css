@@ -122,6 +122,15 @@ p { margin:0px; }
 .spot-theatre.active { background-position:-130px -0px; }
 .spot-arki-shed { background-position:-130px -0px; }
 .spot-arki-shed.active { background-position:-130px -0px; }
+.spot-fc-stop { background-position:-130px -0px; }
+.spot-fc-stop.active { background-position:-130px -0px; }
+.spot-nigs-shed { background-position:-130px -0px; }
+.spot-nigs-shed.active { background-position:-130px -0px; }
+.spot-checkpoint { background-position:-130px -0px; }
+.spot-checkpoint.active { background-position:-130px -0px; }
+.spot-econ-shed { background-position:-130px -0px; }
+.spot-econ-shed.active { background-position:-130px -0px; }
+
 
 .spot-cal { background-position:-130px -120px; }
 .spot-cal.active { background-position:-130px -120px; }
@@ -131,8 +140,8 @@ p { margin:0px; }
 .spot-music.active { background-position:-390px -120px; }
 .spot-cmc { background-position:-520px -120px; }
 .spot-cmc.active { background-position:-520px -120px; }
-.spot-econ { background-position:-650px -120px; }
-.spot-econ.active { background-position:-650px -120px; }
+.spot-se { background-position:-650px -120px; }
+.spot-se.active { background-position:-650px -120px; }
 .spot-cba { background-position:-780px -120px; }
 .spot-cba.active { background-position:-780px -120px; }
 .spot-arki { background-position:-910px -120px; }
@@ -143,8 +152,22 @@ p { margin:0px; }
 .spot-solair.active { background-position:-1170px -120px; }
 .spot-ncpag { background-position:-1300px -120px; }
 .spot-ncpag.active { background-position:-1300px -120px; }
-
-
+.spot-che { background-position:-1430px -120px; }
+.spot-che.active { background-position:-1430px -120px; }
+.spot-law { background-position:-1560px -120px; }
+.spot-law.active { background-position:-1560px -120px; }
+.spot-law-center { background-position:-1690px -120px; }
+.spot-law-center.active { background-position:-1690px -120px; }
+.spot-physics{ background-position:-1820px -120px; }
+.spot-physics.active { background-position:-1820px -120px; }
+.spot-chem { background-position:-1950px -120px; }
+.spot-chem.active { background-position:-1950px -120px; }
+.spot-math { background-position:-2080px -120px; }
+.spot-math.active { background-position:-2080px -120px; }
+.spot-nigs { background-position:-2210px -120px; }
+.spot-nigs.active { background-position:-2210px -120px; }
+.spot-bio { background-position:-2340px -120px; }
+.spot-bio.active { background-position:-2340px -120px; }
 
 /* Distinguish the "cover page" visually other sections. */
 body.section-0 #map { opacity:0.5; }
