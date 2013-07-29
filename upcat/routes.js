@@ -2,7 +2,7 @@ var ikot = {
   "type": "FeatureCollection",
   "features": [
     {
-      
+      "type" : "Feature",
       "properties": {},
       "geometry": {
         "type": "LineString",
@@ -151,14 +151,14 @@ var ikot = {
       }
     }
   ]
-}
+};
 
 var katips = {
   "type": "FeatureCollection",
   "features": [
     {
-      
-      "properties": {"id":"katips-jee"},
+      "type" : "Feature",  
+      "properties": {"id":"katips-jeep"},
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -278,7 +278,7 @@ var katips = {
       }
     }
   ]
-}
+};
 
 var footpath = {
   "type": "FeatureCollection",
@@ -313,7 +313,7 @@ var footpath = {
       }
     }
   ]
-}
+};
 
 var stops = {
   "type": "FeatureCollection",
@@ -484,13 +484,13 @@ var stops = {
       }
     }
   ]
-}
+};
 
 var green = {
   "type": "FeatureCollection",
   "features": [
     {
-      
+      "type" : "Feature",
       "properties": { "id" : "philcoa-jeep"},
       "geometry": {
         "type": "LineString",
@@ -1058,7 +1058,7 @@ var green = {
     }
 
   ]
-}
+};
 
 var geojson = [
     {
