@@ -17,25 +17,44 @@
 <div id='pane'><div id='map'></div></div>
 
 <article>
-  <section id='cover' class='cover active'>
-    <h1>Philcoa to CAL</h1>
-    <p>BEST-Transit</p>
-    <small class='scroll'>Scroll ▼</small>
-  </section>
-  <section id='philcoa'>
-    <h2>PHILCOA</h2>
-    <p>Ride the UP Philcoa jeep</p>
-  </section>
-  <section id='cal'>
-    <h2>College of Arts and Letters</h2>
-    <p>Stop at the Faculty Center and walk to the CAL Building.</p>
-    <br>
-    <img src="../images/cal.png" style="padding:1px;border:thick solid black;">
-     <small class='colophon'>
-      Map data &copy; <a href='http://openstreetmap.org/copyright'>OpenStreetMap Contributors</a><br/>
-      Map design &copy; <a href='http://mapbox.com/about/maps/'>MapBox</a>
-    </small>
-  </section>
+
+<section id='cover' class='cover active'>
+<h1>From Fairview to College of Music<br>(Abelardo Hall)</h1>
+<p align='justify' >BEST-Transit</p>
+<small class='scroll'>Scroll ▼</small>  
+</section>
+
+
+<section id='fairview' >
+<h2>Fairview</h2>
+<p align=' justify' >From Fairview and Commonwealth area, take any jeep that can drop you off at Philcoa.</p>
+</section>
+
+
+<section id='philcoa'>
+<h2>Philcoa</h2>
+<p align=' justify' >Alight from the jeep at Philcoa overpass (near Petron) and go to the other side of the street (where McDonald' s is).
+<br><br>Take the <b>UP-Philcoa Jeep</b>. Terminal is located at the back of McDonald' s. At times, the drivers also wait for passengers out front. UP-SM North and UP-Pantranco jeeps also pass by Philcoa. You can opt to ride them when in a hurry.
+<br><br>
+The jeep enters UP Diliman through the University Avenue (towards the Oblation), leading to the Academic Oval (oval-shaped one-way busy thoroughfare lined by lots of huge trees).
+<br><br>
+Fare: Php8.00</p>
+</section>
+
+
+<section id='oble' >
+<h1>The Oblation Plaza</h1>
+<p align='justify'>Alight from the jeep at the Oblation plaza.
+<br><br>
+Though the UP-Philcoa jeep passes through Abelardo and Plaridel Hall on its outbound route the two buildings are the last stops in the circuit. It would be quickest if you head there on foot from the Oblation. This way, you will also avoid getting off at the wrong stop.</p>
+</section>
+
+
+<section id='cmc' >
+<h1>College of Mass Communication<br>College of Music</h1>
+<p>The College of Mass Communication and the College of Music are located around 215 meters to your left when facing the statue of the Oblation. The two colleges are beside each other.</p>
+</section>
+
 </article>
 
 <script>
@@ -107,7 +126,7 @@ map.ui.attribution.add()
     ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
     ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
 // Add Jeep Route
-var jeep = d3layer().data(green);
+var jeep = d3layer().data(katips);
 map.addLayer(jeep);
 
 map.addLayer(spots);
