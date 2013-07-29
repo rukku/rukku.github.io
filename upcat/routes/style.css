@@ -130,7 +130,8 @@ p { margin:0px; }
 .spot-checkpoint.active { background-position:-130px -0px; }
 .spot-econ-shed { background-position:-130px -0px; }
 .spot-econ-shed.active { background-position:-130px -0px; }
-
+.spot-vinzons-shed { background-position:-130px -0px; }
+.spot-vinzons-shed.active { background-position:-130px -0px; }
 
 .spot-cal { background-position:-780px 0px; }
 .spot-cal.active { background-position:-130px -120px; }
