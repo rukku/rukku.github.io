@@ -2,7 +2,7 @@ var ikot = {
   "type": "FeatureCollection",
   "features": [
     {
-      "type": "Feature",
+      
       "properties": {},
       "geometry": {
         "type": "LineString",
@@ -157,7 +157,7 @@ var katips = {
   "type": "FeatureCollection",
   "features": [
     {
-      "type": "Feature",
+      
       "properties": {"id":"katips-jee"},
       "geometry": {
         "type": "LineString",
@@ -284,7 +284,7 @@ var footpath = {
   "type": "FeatureCollection",
   "features": [
     {
-      "type": "Feature",
+      
       "properties": {},
       "geometry": {
         "type": "LineString",
@@ -319,7 +319,7 @@ var stops = {
   "type": "FeatureCollection",
   "features": [
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "as-shed"
       },
@@ -332,7 +332,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "vinzons"
       },
@@ -345,7 +345,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "econ-shed"
       },
@@ -358,7 +358,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "romulo-shed"
       },
@@ -371,7 +371,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "engg-shed"
       },
@@ -384,7 +384,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "oble"
       },
@@ -397,7 +397,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "theatre"
       },
@@ -410,7 +410,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {},
       "geometry": {
         "type": "Point",
@@ -421,7 +421,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "gym-shed"
       },
@@ -434,7 +434,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "arki-shed"
       },
@@ -447,7 +447,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "nigs-shed"
       },
@@ -460,7 +460,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "katips"
       },
@@ -473,7 +473,7 @@ var stops = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": { "id":"centris" },
       "geometry": {
         "type": "Point",
@@ -490,7 +490,7 @@ var green = {
   "type": "FeatureCollection",
   "features": [
     {
-      "type": "Feature",
+      
       "properties": { "id" : "philcoa-jeep"},
       "geometry": {
         "type": "LineString",
@@ -663,7 +663,7 @@ var green = {
       }
     },
      {
-      "type": "Feature",
+      
       "properties": {},
       "geometry": {
         "type": "LineString",
@@ -992,7 +992,7 @@ var green = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {},
       "geometry": {
         "type": "LineString",
@@ -1060,11 +1060,22 @@ var green = {
   ]
 }
 
-var geojson = {
-  "type": "FeatureCollection",
-  "features": [
+var geojson = [
     {
-      "type": "Feature",
+      
+      "properties": {
+        "id": "cover", "zoom" : 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05326414108278,
+          14.65365347682925
+        ]
+      }
+    },
+     {
+      
       "properties": {
         "id": "as-shed"
       },
@@ -1077,7 +1088,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "vinzons"
       },
@@ -1090,7 +1101,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "econ-shed"
       },
@@ -1103,7 +1114,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "romulo-shed"
       },
@@ -1116,7 +1127,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "engg-shed"
       },
@@ -1129,7 +1140,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "oble"
       },
@@ -1142,7 +1153,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "theatre"
       },
@@ -1155,7 +1166,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "checkpoint"
       },
@@ -1168,7 +1179,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "gym-shed"
       },
@@ -1181,7 +1192,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "arki-shed"
       },
@@ -1194,7 +1205,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "nigs-shed"
       },
@@ -1207,7 +1218,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "katips"
       },
@@ -1220,7 +1231,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "centris"
       },
@@ -1233,7 +1244,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "cal"
       },
@@ -1246,7 +1257,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "fc-stop"
       },
@@ -1259,7 +1270,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "music"
       },
@@ -1272,7 +1283,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "cmc"
       },
@@ -1285,7 +1296,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "as"
       },
@@ -1298,7 +1309,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "cba"
       },
@@ -1311,7 +1322,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "se"
       },
@@ -1324,7 +1335,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "solair"
       },
@@ -1337,7 +1348,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "ncpag"
       },
@@ -1350,7 +1361,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "law"
       },
@@ -1363,7 +1374,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "law-center"
       },
@@ -1376,7 +1387,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "physics"
       },
@@ -1389,7 +1400,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "math"
       },
@@ -1402,7 +1413,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "chem"
       },
@@ -1415,7 +1426,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "che"
       },
@@ -1428,7 +1439,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "bio"
       },
@@ -1441,7 +1452,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "nigs"
       },
@@ -1454,7 +1465,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "arki"
       },
@@ -1467,7 +1478,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "engg"
       },
@@ -1480,7 +1491,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "smn"
       },
@@ -1493,7 +1504,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "philcoa"
       },
@@ -1506,7 +1517,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "marikina"
       },
@@ -1519,7 +1530,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {
         "id": "lrt2"
       },
@@ -1532,7 +1543,7 @@ var geojson = {
       }
     },
     {
-      "type": "Feature",
+      
       "properties": {"id":"fairview"},
       "geometry": {
         "type": "Point",
@@ -1543,6 +1554,6 @@ var geojson = {
       }
     }
   ]
-}
+
 
 

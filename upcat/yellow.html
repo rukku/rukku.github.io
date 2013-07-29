@@ -104,6 +104,9 @@ p { margin:0px; }
   position:absolute;
   }
 
+/*Main stops*/
+.spot-cover { display:none; }
+
 /*Transpo stops*/
 .spot-philcoa { background-position:-260px 0px; }
 .spot-philcoa.active { background-position:-260px -0px; }
@@ -117,8 +120,6 @@ p { margin:0px; }
 .spot-marikina.active { background-position:-650px -0px; }
 
 
-/*Main stops*/
-.spot-cover { display:none; }
 .spot-cal { background-position:-130px -120px; }
 .spot-cal.active { background-position:-130px -120px; }
 .spot-as { background-position:-390px -120px; }
@@ -248,8 +249,6 @@ function d3layer() {
     return f;
 }
 
-
-];
 var tiles = mapbox.layer().tilejson({
   tiles: [ "http://a.tiles.mapbox.com/v3/examples.map-liczq28b/{z}/{x}/{y}.png" ]
 });
