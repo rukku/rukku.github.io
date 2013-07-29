@@ -1307,7 +1307,7 @@ var geojson = [
     {
       
       "properties": {
-        "id": "vinzons"
+        "id": "vinzons-shed"
       },
       "geometry": {
         "type": "Point",
