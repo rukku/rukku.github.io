@@ -248,13 +248,7 @@ function d3layer() {
     return f;
 }
 
-var geojson = [
-  { "geometry": { "type": "Point", "coordinates": [121.05319976,14.65365866] },
-    "properties": { "id": "cover", "zoom": 15 } },
-  { "geometry": { "type": "Point", "coordinates": [ 121.05319976,14.65365866] },
-    "properties": { "id": "philcoa" } },
-  { "geometry": { "type": "Point", "coordinates": [  121.06741011,14.65255839] },
-    "properties": { "id": "cal" } }
+
 ];
 var tiles = mapbox.layer().tilejson({
   tiles: [ "http://a.tiles.mapbox.com/v3/examples.map-liczq28b/{z}/{x}/{y}.png" ]
