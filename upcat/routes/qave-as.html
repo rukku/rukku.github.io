@@ -27,36 +27,28 @@ path {
 <div id='pane'><div id='map'></div></div>
 
 <article>
-
 <section id='cover' class='cover active'>
-<h1> From MRT Quezon Ave or Centris<br><br> to College of Mass Communication (Plaridel Hall) <br><br> and College of Music (Abelardo Hall)</h1>
-<p> by BEST-Transit</p>
+  <h1>From MRT Quezon Ave or Centris to Palma Hall (AS)</h1>
+  <p>by BEST-Transit</p>
 <small class='scroll'>Scroll ▼</small>  
 </section>
 
-<section id='smn'>
-<h2>MRT Quezon Ave or Centris</h2>
-<p align=’justify’>Go to the UP-MRT/Pantranco jeepney queue at Centris (just right next to the Northbound Exit of MRT Quezon Avenue Station). There is quite a number of jeepney queues there, including a taxi bay. However, queues are unlabeled, so make sure you’re on the right line by verifying with the barker. 
-<br><br>
-Access to UP Diliman is through the Quezon City Circle - Commonwealth route, passing by Philcoa. The jeep enters UP Diliman through the University Ave (towards the Oblation), leading to the Academic Oval (oval-shaped one-way busy thoroughfare lined by lots of huge trees).
-<br><br>
-Fare: Php11.00
-</p>
+<section id='centris'>
+  <h2>MRT Quezon Ave or Centris</h2>
+  <p align=’justify’>Go to the <b>UP-MRT/Pantranco jeepney queue</b> at Centris right next to the Northbound Exit of MRT Quezon Avenue Station.
+  <br><br>
+  There is quite a number of jeepney queues there, including a taxi bay. But, queues are unlabeled, so make sure you’re on the right line by verifying with the barker.</p>
 </section>
 
-<section id='oble'>
-<h1>The Oblation Plaza</h1>
-<p align=’justify’>Alight from the jeep at the Oblation plaza.
-<br><br>
-Though the UP-Philcoa jeep passes through Abelardo and Plaridel Hall on its outbound route the two buildings are the last stops in the circuit. It would be quickest if you head there on foot from the Oblation. This way, you will also avoid getting off at the wrong stop.</p>
-</section>
-
-<section id='cmc' id='music'>
-<h1>College of Mass Communication<br>College of Music</h1>
-<p>The College of Mass Communication and the College of Music are located around 215 meters to your left when facing the statue of the Oblation. The two colleges are beside each other.</p>
-</section>
-
-
+<section id='as'>
+  <h2>Palma Hall</h2>
+  <p align='justify'>There are waiting sheds on both sides of <b>Palma Hall</b> (more popularly known as AS).
+    <br><br>
+    <img src='https://lh5.googleusercontent.com/zt-dHhJpAJdgGrfahgxMVVdFNb54pZ7lCsMBVmd7EE-4RF2FclJp9CrPLBqf8XFiHR5wJL2c3vb2KJCTO0OXPtxdag-mr1HDmpMybk3f_7VekM1zHuA_qRi8'>
+    You may alight at the Faculty Center (FC) waiting shed near the Palma Hall east wing.
+    <br><br>
+    Alternatively, you may also alight at the next stop located near the Palma Hall west wing.</p>
+ </section>
 </article>
 
 <script>
@@ -130,7 +122,6 @@ map.ui.attribution.add()
 // Add Jeep Route
 var jeep = d3layer().data(green);
 map.addLayer(jeep);
-
 
 map.addLayer(spots);
 
