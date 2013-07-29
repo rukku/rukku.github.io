@@ -120,7 +120,8 @@ p { margin:0px; }
 .spot-oble.active { background-position:-130px -0px; }
 .spot-theatre { background-position:-130px -0px; }
 .spot-theatre.active { background-position:-130px -0px; }
-
+.spot-arki-shed { background-position:-130px -0px; }
+.spot-arki-shed.active { background-position:-130px -0px; }
 
 .spot-cal { background-position:-130px -120px; }
 .spot-cal.active { background-position:-130px -120px; }
