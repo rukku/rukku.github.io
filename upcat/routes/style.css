@@ -214,3 +214,9 @@ body.section-0 #map { opacity:0.5; }
     line-height:24px;
     }
   }
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
