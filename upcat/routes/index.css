@@ -4,10 +4,9 @@
 }
 
 body {
-  background-image:url('oblebackground.png');
+  background-image:url('besttransitbg12.jpg');
   background-repeat: no-repeat;
-  background-position:right bottom;
-  background-color:#cccccc;
+  background-position:right top;
   background-attachment: fixed
 }
 
@@ -16,8 +15,8 @@ nav {
   font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 13px;
   line-height: 1.5;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 25px;
+  margin-left: 100px;
   width: 500px;
   -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
      -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
