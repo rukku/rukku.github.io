@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.ico">
+<head>
+    <title>OCD InstaResponder</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Loads the leaflet js-->
+    <script src="dist/leaflet.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+
+    <script src="responders.js"></script>
+
+    <!--For the nearest neighbor computations-->
+    <script src="dist/leaflet-knn.min.js"></script>
+
+    <!--Loads the Leaflet plugins that does the clustering.-->
+    <link rel="stylesheet" href="dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="dist/MarkerCluster.Default.css" />
+    <script src="dist/leaflet.markercluster-src.js"></script>
+
+    <!--Loads Prototype.js-->
+    <script src="prototype.js" type="text/javascript" charset="utf-8"></script>
+
+    <!--Leaflet stylesheets-->
+    <link rel="stylesheet" href="dist/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="dist/leaflet.ie.css" /><![endif]-->
+    <!--Stylesheets from Cartagen-->
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+
+    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+</head>
+<body>
+    <!--
+    <img src = "ndrrmc/banner.jpg"
+         alt = "NDRRMC Banner"
+         align="middle" />
+    -->
+    <div class="brief" style="z-index:999;width:400px;padding:0 10px;font-size:1.3em;background:white;position:absolute;top:10px;right:80px;" id="knitter">
+        <p>Responders Database</p>
+    </div>
+    <div id="map"></div>
+    <script>
+
+        //Handle the popups
+        function onEachFeature(feature, layer) {
+            var popupContent = "<p><b>" + feature.properties.PopupInfo + "</b>" + "<br>" + feature.properties.CONTACT + "</p>";
+
+            if (feature.properties && feature.properties.popupContent) {
+                popupContent += feature.properties.popupContent;
+            }
+
+            layer.bindPopup(popupContent);
+        }
+
+        //Load the map
+        var map = L.map('map').setView([7, 124], 8);
+
+        //Add background layer
+        L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+        }).addTo(map);
+
+        //Set icons
+        var helpIcon = L.icon({
+            iconUrl: 'help.png',
+            iconSize: [30, 30],
+            iconAnchor: [16, 37],
+            popupAnchor: [0, -28]
+        });
+
+        // Pulls GeoJSON data and adds layer to the basemap
+        jQuery.getJSON('geometry.json', function(geojsonFeature){
+            var myLayer = L.geoJson(geojsonFeature, {
+
+                style: function (feature) {
+                    return feature.properties && feature.properties.style;
+                },
+
+                onEachFeature: onEachFeature,
+
+                pointToLayer: function (feature, latlng) {
+                 
+                    return L.marker(latlng, {icon: helpIcon });
+ 
+                }
+            
+            });
+
+            var markers = L.markerClusterGroup();
+            markers.addLayer(myLayer);
+            map.addLayer(markers);
+
+            map.fitBounds(myLayer.getBounds());
+            
+
+            //set point
+            /*
+            var nearest = leafletKnn(myLayer).nearest([7, 124], 1);
+            /*
+            //map.fitBounds(nearest[0].getBounds());
+
+            //center
+            map.setView(nearest[0], 10);
+            map.panTo(nearest[0]);
+
+
+            //draw line from nearest to point
+
+            /*
+            if (nearest.length) {
+                alert(nearest[0].layer.feature.properties.PopupInfo); 
+            } else {
+                alert("It's broken");
+            }
+            */
+
+                       
+        });
+
+    </script>
+
+</div>
+
+<div id="brief">
+    <script type="text/javascript" charset="utf-8">
+        if (Prototype.Browser.MobileSafari) {$('brief').hide()}
+    </script>
+    <div class="column first" id="brief_first">
+        <h2><img src="logo.small.png" alt="NDRRMC"><br />
+            <small>A viewer for emergency responders<br />
+            by <a href="http://unterbahn.com">SRDP Consulting</a>
+            <br />
+            <a href="http://wiki.cartagen.org">More Info</a> |
+            <a href="http://github.com/jywarren/cartagen/">Source</a> |
+            <a href="http://unterbahn.com/tag/cartagen/">Blog</a>
+            <a href="javascript:void(0);" onClick="$('description').show();$">[Show]</a>
+            </small></h2>
+
+        <script type="text/javascript" charset="utf-8">
+            function find(q) {
+                q = q.replace(' ','-')
+                document.location = "/find/"+q
+            }
+        </script>
+    
+    </div>
+    
+    <div id="description">
+        <div style="float:right;margin:5px;"><a href="javascript:void(0);" onClick="$('description').hide();$('brief').style.width = '28%';$('brief_first').style.width = '92%';">[hide]</a></div>
+  
+        <div class="column">
+            <h3>Clusters</h3>
+            <p>Points cluster together when map is zoomed out</p>
+            
+        </div>
+        <div class="column">
+            <h3>Basemap</h3>
+            <p> The viewer pulls tiles from Cloudmade. Data displayed here is from <a href="http://openstreetmap.org">OpenStreetMap</a> (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>)</p>
+        </div>
+        <div class="column">
+            <h3>Responder information</h3>
+            <p>Specific information like contact persons and the name of the facility can be obtained by clicking on the markers.</p>
+           
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

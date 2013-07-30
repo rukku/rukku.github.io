@@ -1,0 +1,484 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "as-shed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0704356431961,
+          14.653752085439068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "vinzons"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07311785221098,
+          14.654193228676494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "econ-shed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07316076755522,
+          14.655786526854643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "romulo-shed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07282817363738,
+          14.657229308041824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "engg-shed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0684722661972,
+          14.656289944391313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oble"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06419146060944,
+          14.654670700356128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "theatre"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0659670829773,
+          14.656175767319473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "checkpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06201887130737,
+          14.654670700356128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gym-shed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06163263320921,
+          14.659844973446111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "arki-shed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06505513191222,
+          14.653622337259035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nigs-shed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06903284788132,
+          14.64872039474235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "katips"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07417464256288,
+          14.63223359760071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "centris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.03824377059937,
+          14.643756060661177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "cal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06746912002563,
+          14.652620678723265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "fc-stop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0684722661972,
+          14.653705376103108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "music"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06530189514159,
+          14.656637665107176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "cmc"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06455087661743,
+          14.656673994105345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "as"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06987237930298,
+          14.653440689677907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "cba"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07355237007141,
+          14.655251968822583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "se"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07348799705507,
+          14.65616538758273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "solair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0617560148239,
+          14.657270826784247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ncpag"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06050074100493,
+          14.656461209887507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "law"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07213079929352,
+          14.656502728775509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "law-center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07212543487549,
+          14.657089182228018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "physics"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07312858104706,
+          14.649091482633052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "math"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07172310352325,
+          14.64861918884494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "chem"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07309103012085,
+          14.650902797725259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "che"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07328414916991,
+          14.652169152393931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bio"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07045173645018,
+          14.652682958143942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nigs"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0694593191147,
+          14.648037902785704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "arki"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06522679328917,
+          14.651255716974955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "engg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06964707374571,
+          14.65657019695173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "smn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0304546356201,
+          14.656731082518872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "philcoa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05326414108278,
+          14.65365347682925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "marikina"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07493638992308,
+          14.632129788876695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lrt2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07304811477661,
+          14.630884080358447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"id":"fairview"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06502294540404,
+          14.661734045700618
+        ]
+      }
+    }
+  ]
+}

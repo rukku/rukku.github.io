@@ -1,0 +1,4 @@
+for next time:
+
+1. find a way where the single quotes come out html ready 
+2. the arki stop should be at the shoulder of the acad oval instead of at oble

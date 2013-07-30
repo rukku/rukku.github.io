@@ -1,136 +1,36 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='UTF-8'/>
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<script src='http://underscorejs.org/underscore-min.js'></script>
-<style>
-body {
-  margin:0px;
-  padding:0px;
-  font:normal 15px/20px Arial,sans-serif;
-  background:#fff;
-  }
-
-article {
-  width:60%;
-  min-width:320px;
-  position:relative;
-  padding-top:40px;
-  padding-bottom:30%;
-  margin-left: auto;
-  margin-right: auto
-  }
-section {
-  padding:40px;
-  margin-left:40px;
-  position:relative;
-  margin-left: auto;
-  margin-right: auto;
-  transition:background 500ms, color 500ms;
-  -moz-transition:background 500ms, color 500ms;
-  -webkit-transition:background 500ms, color 500ms;
-  }
-section,
-section a {
-  color:#888;
-  color:rgba(128,128,128,0);
-  text-decoration:none;
-  text-shadow:rgba(64,64,64,1) 0px 0px 4px;
-  }
-section.active {
-  background:maroon;
-  color:#eee;
-  }
-section.active a { color:#eee; }
-section.active small { color:#aaa; }
-h1 { font-size:2em; line-height:1em; }
-h2 { font-size:1.3333em; }
-h1,h2 { margin:0px 0px 10px; }
-p { margin:0px; }
-
-.scroll {
-  position:absolute;
-  right:0px; bottom:0px;
-  font-size:10px;
-  text-transform:uppercase;
-  padding:5px 10px;
-  }
-.colophon {
-  display:block;
-  margin-top:10px;
-  }
-
-.cover:before {
-  content:'';
-  display:block;
-  width:120px; height:120px;
-  margin:0px auto 20px;
-  }
-.cover.active:before { background:url(../7292013.png) 0px -120px no-repeat; }
-</style>
+<meta charset=utf-8 />
+<meta name="description" content="description">
+ 
+<title>Design Shack Vertical Nav Menu</title>
+<link rel="stylesheet" media="screen" href="index.css" />
+ 
 </head>
+ 
 <body>
-
-<article>
-    <section id='cover' class='cover active'>
-    <h1>UPCAT Guide</h1>
-    <p>BEST-Transit</p>
-    <small class='scroll'>Scroll ▼</small>  
-  </section>
-
-  <section id='katips'>
-    <h2>Testing Centers</h2>
-    <ul>
-      <li> CAL <li/>
-    </ul>
-  </section>
-
-
-</article>
-
-<script>
-// Array of story section elements.
-var sections = document.getElementsByTagName('section');
-
-// Helper to set the active section.
-var setActive = function(index, ease) {
-  _(sections).each(function(s) { s.className = s.className.replace(' active', '') });
-  sections[index].className += ' active';
-  return true;
-};
-
-// Bind to scroll events to find the active section.
-window.onscroll = _(function() {
-  // IE 8
-  if (window.pageYOffset === undefined) {
-    var y = document.documentElement.scrollTop;
-    var h = document.documentElement.clientHeight;
-  } else {
-    var y = window.pageYOffset;
-    var h = window.innerHeight;
-  }
-
-  // If scrolled to the very top of the page set the first section active.
-  if (y === 0) return setActive(0, true);
-
-  // Otherwise, conditionally determine the extent to which page must be
-  // scrolled for each section. The first section that matches the current
-  // scroll position wins and exits the loop early.
-  var memo = 0;
-  var buffer = (h * 0.3333);
-  var active = _(sections).any(function(el, index) {
-    memo += el.offsetHeight;
-    return y < (memo-buffer) ? setActive(index, true) : false;
-  });
-
-  // If no section was set active the user has scrolled past the last section.
-  // Set the last section active.
-  if (!active) setActive(sections.length - 1, true);
-}).debounce(10);
-</script>
-
+    
+    <nav>
+        <div class="menu-item alpha">
+          <h4><a href="#">Home</a></h4>
+          <p>This is a Design Shack demo showcasing a simple animated vertical navigation menu. <a href="http://designshack.net/articles/css/verticalaccordionav/">Click here</a> to return to the tutorial.</p>
+        </div>
+          
+        <div class="menu-item">
+          <h4><a href="#">CAL</a></h4>
+          <ul>
+            <li><a href="#">Commonwealth Avenue</a></li>
+            <li><a href="#">Katipunan Avenue</a></li>
+            <li><a href="#">Philcoa</a></li>
+            <li><a href="#">North Avenue</a></li>
+            <li><a href="#">Quezon Avenue</a></li>            
+          </ul>
+        </div>
+          
+    </nav>
+    
+ 
 </body>
 </html>
