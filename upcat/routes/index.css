@@ -4,8 +4,11 @@
 }
 
 body {
-  background: #e5e5e7;
-  margin-left: 20px;
+  background-image:url('oblebackgroundgray.png');
+  background-repeat: no-repeat;
+  background-position:right bottom;
+  background-color:#cccccc;
+  background-attachment: fixed
 }
 
 nav {
