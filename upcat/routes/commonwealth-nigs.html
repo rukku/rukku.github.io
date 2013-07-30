@@ -15,7 +15,7 @@
 path {
   fill: #000;
   fill-opacity: .05;
-  stroke: red;
+  stroke: lime;
   stroke-opacity: 0.50;
   stroke-width: 15.0px;
   }
@@ -29,42 +29,43 @@ path {
 <article>
 
 <section id='cover' class='cover active'>
-    <h1>LRT 2 Katipunan Station or Marikina to CHE Gusali 2</h1>
-    <p>by BEST-Transit</p>
-    <small class='scroll'>Scroll ▼</small>  
-  </section>
-
-<section id='katips'>
-  <h2>Katipunan Jeepney Terminal</h2>
-  <p align='justify'>From Marikina, alight at Aurora Blvd corner Katipunan and walk towards the <b>jeepney terminal</b> under the Katipunan Flyover.
-  <br><br>
-  If you’re coming from the <b>LRT-2 Katipunan Station</b>, take the <b>North Exit</b> on the same side as St. Bridget, opposite PSBA. Walk towards the jeepney terminal under the Katipunan Flyover.
-  <br><br>
-  There are two queues calling UP at the terminal. Make sure you <b>ride the jeep which goes inside the campus</b> (the jeep line closer to Ministop). The other jeep line (farther from Ministop) goes to Tandang Sora and will not go inside UP. To be sure, ask the barker before boarding.</p>
+<h1>From Fairview to NIGS*</h1>
+<p>by BEST-Transit</p>
+<p>*National Institute of Geological Sciences</p>
+<small class='scroll'>Scroll ▼</small>  
 </section>
 
-<section id='che'>
-  <h2>UP Integrated School foot bridge</h2>
-  <p align='justify'>Alight at the <b>foot bridge along Katipunan Avenue</b> connecting the old UP Integrated School compound to the main campus. There is a lesser known <b>pedestrian entrance here marked by a guard house</b>.</p>
+<section id='fairview'>
+<h2>Fairview</h2>
+<p align='justify'>From Fairview and Commonwealth area, take any jeep that can drop you off at Philcoa.</p>
 </section>
 
-<section id='che'>
-  <h2>College of Home Economics</h2>
-  <p><img src='https://lh3.googleusercontent.com/JzBpb7VYaEHYOhhl7cRkl26OzvnuZykPiLip7j5HSZ1oAgz3zLRMx95rQvqyT0WzFSiTUapfc2FeOiUQ_6-bwdUF-gXaF4QwhtNr6Cz6VVHc8UJcRLmMDkd3'>
-  <br><br>
-  Walk across the foot bridge and enter the campus. The <b>College of Home Economics</b> is only a few meters to your left.</p>
+<section id='philcoa'>
+<h2>Philcoa</h2>
+<p align='justify'>Step off from the jeep at <b>Philcoa foot bridge</b> near Petron and cross to the side of McDonald's.
+<br><br>Take the <b>UP-Philcoa Jeep</b>. Terminal is located at the back of McDonald's. At times, the drivers also wait for passengers out front. When in a hurry, you can also opt to ride UP-SM North and UP-Pantranco jeeps unloading passengers in the area..
+<br><br>
+The jeep enters UP Diliman through the University Ave (towards the Oblation), leading to the Academic Oval (oval-shaped one-way busy thoroughfare lined by lots of huge trees).
+<br><br>
+Fare: Php11.00
+</p>
 </section>
 
-<section id='vinzons-shed'>
-  <h2>Alternative: Vinzon's Waiting Shed</h2>
-  <p align='justify'>If you prefer sitting through the roundabout route of the Katipunan Jeep inside campus, step off from the jeep at the line of waiting sheds in front of <b>Vinzons Hall</b>.
-  <br><br>
-  Vinzons is a major transpo hub inside UP as all jeepney routes pass by this area. The UP Sunken Garden is visible from here.
-  <br><br>
-  Once in Vinzons, head towards <b>Regidor St</b> (passing by the side of Benitez Hall or College of Education). The CHE Gusali 2 is at the corner of Regidor St and Quirino Ave.</p>
+<section id='checkpoint'>
+<h2>University Avenue Checkpoint</h2>
+<p align='justify'>Get off at the Checkpoint where two white angular waiting sheds flank each side of the University Avenue. Generally, vehicles slow down for a security check as they approach the area so this should not be hard to miss.
+<br><br>
+Wait for an Ikot jeep at the waiting shed along Emilio Jacinto St. The Ikot jeep has a yellow color motif. Do not fret when the jeep exits the main campus and plies along C.P. Garcia Avenue. This is a typical part of its route.
+<br><br>
+Fare: Php.7.00</p>
 </section>
 
-
+<section id='nigs'>
+<h2>NIGS (National Institute of Geological Sciences)</h2>
+<p align='justify'>The <b>National Institute of Geological Sciences</b> will be the first building you see on the right as the Ikot jeep re-enters the campus via the Velasquez gate. The building has an orange brick exterior.
+<br>
+Step off at the nearest waiting shed.</p>
+</section>
 </article>
 
 <script>
@@ -136,8 +137,10 @@ map.ui.attribution.add()
     ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
     ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
 // Add Jeep Route
-var jeep = d3layer().data(katips);
+var jeep = d3layer().data(green);
+var yellow = d3layer().data(ikot);
 map.addLayer(jeep);
+map.addLayer(yellow)
 
 
 map.addLayer(spots);

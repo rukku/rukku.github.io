@@ -15,7 +15,7 @@
 path {
   fill: #000;
   fill-opacity: .05;
-  stroke: red;
+  stroke: green;
   stroke-opacity: 0.50;
   stroke-width: 15.0px;
   }
@@ -29,39 +29,41 @@ path {
 <article>
 
 <section id='cover' class='cover active'>
-    <h1>LRT 2 Katipunan Station or Marikina to CHE Gusali 2</h1>
-    <p>by BEST-Transit</p>
+<h1> From SM North EDSA <br><br>to National Science Complex <br><br></h1>
+    <p align='justify'>Institute of Chemistry <br> National Institute of Physics <br> Institute of Math</p>
+    <p> <br>  by BEST-Transit</p>
     <small class='scroll'>Scroll ▼</small>  
   </section>
 
-<section id='katips'>
-  <h2>Katipunan Jeepney Terminal</h2>
-  <p align='justify'>From Marikina, alight at Aurora Blvd corner Katipunan and walk towards the <b>jeepney terminal</b> under the Katipunan Flyover.
-  <br><br>
-  If you’re coming from the <b>LRT-2 Katipunan Station</b>, take the <b>North Exit</b> on the same side as St. Bridget, opposite PSBA. Walk towards the jeepney terminal under the Katipunan Flyover.
-  <br><br>
-  There are two queues calling UP at the terminal. Make sure you <b>ride the jeep which goes inside the campus</b> (the jeep line closer to Ministop). The other jeep line (farther from Ministop) goes to Tandang Sora and will not go inside UP. To be sure, ask the barker before boarding.</p>
-</section>
-
-<section id='che'>
-  <h2>UP Integrated School foot bridge</h2>
-  <p align='justify'>Alight at the <b>foot bridge along Katipunan Avenue</b> connecting the old UP Integrated School compound to the main campus. There is a lesser known <b>pedestrian entrance here marked by a guard house</b>.</p>
-</section>
-
-<section id='che'>
-  <h2>College of Home Economics</h2>
-  <p><img src='https://lh3.googleusercontent.com/JzBpb7VYaEHYOhhl7cRkl26OzvnuZykPiLip7j5HSZ1oAgz3zLRMx95rQvqyT0WzFSiTUapfc2FeOiUQ_6-bwdUF-gXaF4QwhtNr6Cz6VVHc8UJcRLmMDkd3'>
-  <br><br>
-  Walk across the foot bridge and enter the campus. The <b>College of Home Economics</b> is only a few meters to your left.</p>
+<section id='smn'>
+<h2>SM North EDSA</h2>
+<p align=”justify”>Take the UP-SM North Jeep. The fair is 11 pesos.<br>
+The jeep enters UP Diliman through the University Avenue (towards the Oblation), leading to the Academic Oval (oval-shaped one-way busy thoroughfare lined by lots of huge trees). 
+</p>
 </section>
 
 <section id='vinzons-shed'>
-  <h2>Alternative: Vinzon's Waiting Shed</h2>
-  <p align='justify'>If you prefer sitting through the roundabout route of the Katipunan Jeep inside campus, step off from the jeep at the line of waiting sheds in front of <b>Vinzons Hall</b>.
-  <br><br>
-  Vinzons is a major transpo hub inside UP as all jeepney routes pass by this area. The UP Sunken Garden is visible from here.
-  <br><br>
-  Once in Vinzons, head towards <b>Regidor St</b> (passing by the side of Benitez Hall or College of Education). The CHE Gusali 2 is at the corner of Regidor St and Quirino Ave.</p>
+<h2>Vinzon's Waiting Shed</h2>
+<p align='justify'>Step off from the jeep at the line of waiting sheds in front of Vinzon's Hall. From here you will be navigating on foot for about 500 meters. This is the fastest and most straightforward route to the complex.
+<br>
+Facing Vinzon's Hall, head to your right and walk down A. Ma. Regidor Street. This road will take you past the College of Home Economics and the PAGASA Observatory, to finally intersect with the National Science Complex.</p>
+</section>
+
+<section id='chem'>
+<h2>Institute of Chemistry</h2>
+<p align='justify'>After you walk past the Observatory, the <b>Institute of Chemistry</b> building should be to your left, before A. Ma. Regidor St. slopes down and intersects with the National Science Complex oval. The building has an unmistakable facade of bonded atoms.</p>
+</section>
+
+<section id='physics'>
+<h2>National Institute of Physics</h2>
+<p align='justify'>Facing the National Science Complex Amphitheater, the <b>National Institute of Physics</b> should be visible behind it on its right-hand side. The building has a rough tan finishing and a characteristic cylindrical annex. To get there continue walking left of the amphitheater. The left fork will lead you to the building's side entry.</p>
+</section>
+
+<section id='math'>
+<h2>Institute of Mathematics</h2>
+<p align='justify'>Facing the National Science Complex Amphitheater, the <b>Institute of Mathematics<b> is located behind it on its left-hand side. However, the building may not be completely visible as it stands on lower terrain.
+<br>
+Walk down the road between the Amphitheater and the Computational Science Research Center. At the junction, the Institute of Mathematics should now be visible with its green roof and rough gray finishing. A path for pedestrians leads to the Institute's parking lot and entrance.</p>
 </section>
 
 
@@ -136,7 +138,7 @@ map.ui.attribution.add()
     ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
     ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
 // Add Jeep Route
-var jeep = d3layer().data(katips);
+var jeep = d3layer().data(green);
 map.addLayer(jeep);
 
 

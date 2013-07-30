@@ -15,7 +15,7 @@
 path {
   fill: #000;
   fill-opacity: .05;
-  stroke: red;
+  stroke: green;
   stroke-opacity: 0.50;
   stroke-width: 15.0px;
   }
@@ -27,44 +27,34 @@ path {
 <div id='pane'><div id='map'></div></div>
 
 <article>
-
 <section id='cover' class='cover active'>
-    <h1>LRT 2 Katipunan Station or Marikina to CHE Gusali 2</h1>
-    <p>by BEST-Transit</p>
-    <small class='scroll'>Scroll ▼</small>  
-  </section>
+   <h1> From SM North Edsa to College of Arts and Letters</h1>
+   <p>by BEST-Transit</p>
+   <small class='scroll'>Scroll ▼</small>  
+ </section>
 
-<section id='katips'>
-  <h2>Katipunan Jeepney Terminal</h2>
-  <p align='justify'>From Marikina, alight at Aurora Blvd corner Katipunan and walk towards the <b>jeepney terminal</b> under the Katipunan Flyover.
-  <br><br>
-  If you’re coming from the <b>LRT-2 Katipunan Station</b>, take the <b>North Exit</b> on the same side as St. Bridget, opposite PSBA. Walk towards the jeepney terminal under the Katipunan Flyover.
-  <br><br>
-  There are two queues calling UP at the terminal. Make sure you <b>ride the jeep which goes inside the campus</b> (the jeep line closer to Ministop). The other jeep line (farther from Ministop) goes to Tandang Sora and will not go inside UP. To be sure, ask the barker before boarding.</p>
+ <section id='smn'>
+   <h2>SM North EDSA</h2>
+   <p align='justify'>Take the UP-SM North Jeep. The terminal is underneath the SM Sky Garden, labeled <b>UP Campus</b>.
+   </p></section>
+
+<section id='oble'>
+  <img src='https://lh5.googleusercontent.com/Yz5J2JH1WOC3rDIvLnC-0kHeuK0F7Q8I7KXhRWGsx79Ev4f_xbZFySb49DLnGdWV-52yjPxcneu3kx2XpNdRy_e7hNYH-41eLrYwb7Q5HBn8saCd2RuffH4d'>
+  <p>The jeep enters UP Diliman through the <b>University Avenue</b> and heads toward the <b>Oblation plaza</b>. It then makes a right turn at the Oblation and enters the <b>Academic Oval</b>, a major campus thoroughfare lined by Acacia trees on each side.</p></section>
+
+<section id='fc-stop'>
+  <h2>Faculty Center waiting shed</h2>
+  <img src='https://lh6.googleusercontent.com/UmQZJwFfJKff5pMZNMzBPlZtFWMU6cHu-fYKtGq8l7JQuY3vibnH4hAYPisdHPY1UXi-6FznUr6ydZbupf0KP2U69LyMN_LVIp-g1iQP_ZWRpqTVZm-ynHms'>
+  <p align='justify'>Step off from the jeep at the <b>Faculty Center</b> (FC) beside Vargas Museum.
+    <br><br>
+    Walk back in the direction of Vargas Museum then make a left turn as you reach the <b>service road</b> beside FC.</p>
 </section>
 
-<section id='che'>
-  <h2>UP Integrated School foot bridge</h2>
-  <p align='justify'>Alight at the <b>foot bridge along Katipunan Avenue</b> connecting the old UP Integrated School compound to the main campus. There is a lesser known <b>pedestrian entrance here marked by a guard house</b>.</p>
+<section id='cal'>
+<h2>College of Arts and Letters</h2>
+<img src='https://lh6.googleusercontent.com/7O8KqiUUafzyctqoYlZ7pUqo0gVjctpwHc1l7kwHK8kajm3XCzNFdubfIOBiVOlgF7rOMPKZLwL6z_tUuaF0_GB9G3BgXs390wcoGTLqHBtiIYNd_skxWstZ'>
+<p align='justify'>Finally, head toward the nude female statue, Magdangal. Looming behind her is the <b>College of Arts and Letters</b> building.</p>
 </section>
-
-<section id='che'>
-  <h2>College of Home Economics</h2>
-  <p><img src='https://lh3.googleusercontent.com/JzBpb7VYaEHYOhhl7cRkl26OzvnuZykPiLip7j5HSZ1oAgz3zLRMx95rQvqyT0WzFSiTUapfc2FeOiUQ_6-bwdUF-gXaF4QwhtNr6Cz6VVHc8UJcRLmMDkd3'>
-  <br><br>
-  Walk across the foot bridge and enter the campus. The <b>College of Home Economics</b> is only a few meters to your left.</p>
-</section>
-
-<section id='vinzons-shed'>
-  <h2>Alternative: Vinzon's Waiting Shed</h2>
-  <p align='justify'>If you prefer sitting through the roundabout route of the Katipunan Jeep inside campus, step off from the jeep at the line of waiting sheds in front of <b>Vinzons Hall</b>.
-  <br><br>
-  Vinzons is a major transpo hub inside UP as all jeepney routes pass by this area. The UP Sunken Garden is visible from here.
-  <br><br>
-  Once in Vinzons, head towards <b>Regidor St</b> (passing by the side of Benitez Hall or College of Education). The CHE Gusali 2 is at the corner of Regidor St and Quirino Ave.</p>
-</section>
-
-
 </article>
 
 <script>
@@ -136,9 +126,8 @@ map.ui.attribution.add()
     ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
     ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
 // Add Jeep Route
-var jeep = d3layer().data(katips);
+var jeep = d3layer().data(green);
 map.addLayer(jeep);
-
 
 map.addLayer(spots);
 

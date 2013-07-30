@@ -15,7 +15,7 @@
 path {
   fill: #000;
   fill-opacity: .05;
-  stroke: red;
+  stroke: green;
   stroke-opacity: 0.50;
   stroke-width: 15.0px;
   }
@@ -29,41 +29,34 @@ path {
 <article>
 
 <section id='cover' class='cover active'>
-    <h1>LRT 2 Katipunan Station or Marikina to CHE Gusali 2</h1>
-    <p>by BEST-Transit</p>
-    <small class='scroll'>Scroll ▼</small>  
-  </section>
-
-<section id='katips'>
-  <h2>Katipunan Jeepney Terminal</h2>
-  <p align='justify'>From Marikina, alight at Aurora Blvd corner Katipunan and walk towards the <b>jeepney terminal</b> under the Katipunan Flyover.
-  <br><br>
-  If you’re coming from the <b>LRT-2 Katipunan Station</b>, take the <b>North Exit</b> on the same side as St. Bridget, opposite PSBA. Walk towards the jeepney terminal under the Katipunan Flyover.
-  <br><br>
-  There are two queues calling UP at the terminal. Make sure you <b>ride the jeep which goes inside the campus</b> (the jeep line closer to Ministop). The other jeep line (farther from Ministop) goes to Tandang Sora and will not go inside UP. To be sure, ask the barker before boarding.</p>
+<h1>From MRT Quezon Avenue or Centris</h1>
+<p>by BEST-Transit</p>
+<small class='scroll'>Scroll ▼</small>  
 </section>
 
-<section id='che'>
-  <h2>UP Integrated School foot bridge</h2>
-  <p align='justify'>Alight at the <b>foot bridge along Katipunan Avenue</b> connecting the old UP Integrated School compound to the main campus. There is a lesser known <b>pedestrian entrance here marked by a guard house</b>.</p>
+<section id='centris'>
+<h2>MRT Quezon Ave or Centris</h2>
+<p align='justify'>Go to the UP-MRT/Pantranco jeepney queue at Centris (just right next to the Northbound Exit of MRT Quezon Avenue Station). There is quite a number of jeepney queues there, including a taxi bay. However, queues are unlabeled, so make sure you're on the right line by verifying with the barker. 
+<br><br>
+Access to UP Diliman is through the Quezon City Circle - Commonwealth route, passing by Philcoa. The jeep enters UP Diliman through the University Ave (towards the Oblation), leading to the Academic Oval (oval-shaped one-way busy thoroughfare lined by lots of huge trees).
+<br><br>
+Fare: Php11.00
+</p>
 </section>
 
-<section id='che'>
-  <h2>College of Home Economics</h2>
-  <p><img src='https://lh3.googleusercontent.com/JzBpb7VYaEHYOhhl7cRkl26OzvnuZykPiLip7j5HSZ1oAgz3zLRMx95rQvqyT0WzFSiTUapfc2FeOiUQ_6-bwdUF-gXaF4QwhtNr6Cz6VVHc8UJcRLmMDkd3'>
-  <br><br>
-  Walk across the foot bridge and enter the campus. The <b>College of Home Economics</b> is only a few meters to your left.</p>
+<section id='arki-shed'>
+<h1>Academic Oval Waiting Shed</h1>
+<p align='justify'>Get off from the jeep at the first intersection after the jeep turns right at the Oblation. This intersection of Roxas Ave and E. Delos Santos St is marked by a waiting shed. <br><br>
+No jeep route passes by the College of Architecture on weekends so you will have to complete the rest of the trip on foot.
+<br><br>
+From the waiting shed, walk along E. Delos Santos St with the Oblation statue behind you. Only a few meters ahead is another intersection. Continue walking along E. Delos Santos St toward the UP Press Office.
+text</p>
 </section>
 
-<section id='vinzons-shed'>
-  <h2>Alternative: Vinzon's Waiting Shed</h2>
-  <p align='justify'>If you prefer sitting through the roundabout route of the Katipunan Jeep inside campus, step off from the jeep at the line of waiting sheds in front of <b>Vinzons Hall</b>.
-  <br><br>
-  Vinzons is a major transpo hub inside UP as all jeepney routes pass by this area. The UP Sunken Garden is visible from here.
-  <br><br>
-  Once in Vinzons, head towards <b>Regidor St</b> (passing by the side of Benitez Hall or College of Education). The CHE Gusali 2 is at the corner of Regidor St and Quirino Ave.</p>
+<section id='arki'>
+<h1>College of Architecture</h1>
+<p align='justify'>The <b>College of Architecture, a building known to UP students for its colorful wind breakers will come into full view as you walk past the UP Press Office.</p>
 </section>
-
 
 </article>
 
@@ -136,7 +129,7 @@ map.ui.attribution.add()
     ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
     ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
 // Add Jeep Route
-var jeep = d3layer().data(katips);
+var jeep = d3layer().data(green);
 map.addLayer(jeep);
 
 
