@@ -18,6 +18,15 @@ path {
   stroke-opacity: 0.50;
   stroke-width: 15.0px;
   }
+.d3-vecp { position:absolute; }
+fpath {
+  fill: #000;
+  fill-opacity: .05;
+  stroke: red;
+  stroke-opacity: 0.50;
+  stroke-width: 15.0px;
+  }
+
 body {
   margin:0px;
   padding:0px;
@@ -221,6 +230,49 @@ function d3layer() {
     return f;
 }
 
+function fpathlayer() {
+    var f = {}, bounds, feature, collection;
+    var div = d3.select(document.body)
+        .append("div")
+        .attr('class', 'd3-vecp'),
+        svg = div.append('svg'),
+        g = svg.append("g");
+
+    f.parent = div.node();
+
+    f.project = function(x) {
+      var point = f.map.locationPoint({ lat: x[1], lon: x[0] });
+      return [point.x, point.y];
+    };
+
+    var first = true;
+    f.draw = function() {
+      first && svg.attr("width", f.map.dimensions.x)
+          .attr("height", f.map.dimensions.y)
+          .style("margin-left", "0px")
+          .style("margin-top", "0px") && (first = false);
+
+      path = d3.geo.path().projection(f.project);
+      feature.attr("d", path);
+    };
+
+    f.data = function(x) {
+        collection = x;
+        bounds = d3.geo.bounds(collection);
+        feature = g.selectAll("fpath")
+            .data(collection.features)
+            .enter().append("fpath");
+        return f;
+    };
+
+    f.extent = function() {
+        return new MM.Extent(
+            new MM.Location(bounds[0][1], bounds[0][0]),
+            new MM.Location(bounds[1][1], bounds[1][0]));
+    };
+    return f;
+}
+
 
 
 var geojson = [
@@ -244,7 +296,6 @@ var spots = mapbox.markers.layer()
     el.className = 'spot spot-' + f.properties.id;
     return el;
   });
-
 // Creates the map with tile and marker layers and
 // no input handlers (mouse drag, scrollwheel, etc).
 var map = mapbox.map('map', [spots], null, []);
@@ -255,6 +306,13 @@ map.ui.attribution.add()
     .content('Map tiles by <a href="http://stamen.com">Mapbox</a>, under' +
     ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
     ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
+// Add Ikot Route
+var ikotroute = d3layer().data(ikot);
+var fpath = fpathlayer().data(footpath);
+
+map.addLayer(ikotroute);
+map.addLayer(fpath);
+
 map.addLayer(spots);
 
 // Array of story section elements.
@@ -280,9 +338,9 @@ var setActive = function(index, ease) {
 
   // Ease map to active marker.
   if (!ease) {
-    map.centerzoom(markers[index].location, markers[index].data.properties.zoom||18);
+    map.centerzoom(markers[index].location, markers[index].data.properties.zoom||20);
   } else {
-    map.ease.location(markers[index].location).zoom(markers[index].data.properties.zoom||18).optimal(0.5, 2);
+    map.ease.location(markers[index].location).zoom(markers[index].data.properties.zoom||20).optimal(0.5, 2);
   }
 
   return true;
@@ -320,9 +378,7 @@ window.onscroll = _(function() {
 // Set map to first section.
 setActive(0, false);
 
-// Add Ikot Route
-var ikotroute = d3layer().data(ikot);
-map.addLayer(ikotroute);
+
 //var myLayer = L.geoJson(ikot).addTo(map);
 </script>
 

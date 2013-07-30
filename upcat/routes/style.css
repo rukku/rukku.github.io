@@ -106,6 +106,8 @@ p { margin:0px; }
 .spot-mrt.active { background-position:-390px -0px; }
 .spot-lrt { background-position:-390px 0px; }
 .spot-lrt.active { background-position:-390px -0px; }
+.spot-lrt2 { background-position:-390px 0px; }
+.spot-lrt2.active { background-position:-390px -0px; }
 .spot-fairview { background-position:-520px 0px; }
 .spot-fairview.active { background-position:-520px -0px; }
 .spot-marikina { background-position:-650px 0px; }
@@ -132,6 +134,10 @@ p { margin:0px; }
 .spot-econ-shed.active { background-position:-130px -0px; }
 .spot-vinzons-shed { background-position:-130px -0px; }
 .spot-vinzons-shed.active { background-position:-130px -0px; }
+.spot-che-bridge { background-position:-130px -0px; }
+.spot-che-bridge.active { background-position:-130px -0px; }
+.spot-romulo-shed { background-position:-130px -0px; }
+.spot-romulo-shed.active { background-position:-130px -0px; }
 
 .spot-cal { background-position:-780px 0px; }
 .spot-cal.active { background-position:-130px -120px; }

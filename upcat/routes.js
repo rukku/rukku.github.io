@@ -663,7 +663,7 @@ var green = {
       }
     },
      {
-      
+      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "LineString",
@@ -1767,6 +1767,17 @@ var geojson = [
         "coordinates": [
           121.06502294540404,
           14.661734045700618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"id":"che-bridge"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0743999481201,
+          14.65230928135431
         ]
       }
     }

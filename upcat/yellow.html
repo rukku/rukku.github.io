@@ -124,18 +124,24 @@ p { margin:0px; }
 .spot-cal.active { background-position:-130px -120px; }
 .spot-as { background-position:-260px -120px; }
 .spot-as.active { background-position:-260px -120px; }
-.spot-london-bridge { background-position:-390px 0px; }
-.spot-london-bridge.active { background-position:-390px -120px; }
-.spot-woolwich { background-position:-520px 0px; }
-.spot-woolwich.active { background-position:-520px -120px; }
-.spot-gloucester { background-position:-650px 0px; }
-.spot-gloucester.active { background-position:-650px -120px; }
-.spot-caulfield-gardens { background-position:-780px 0px; }
-.spot-caulfield-gardens.active { background-position:-780px -120px; }
-.spot-telegraph { background-position:-910px 0px; }
-.spot-telegraph.active { background-position:-910px -120px; }
-.spot-charing-cross { background-position:-1040px 0px; }
-.spot-charing-cross.active { background-position:-1040px -120px; }
+.spot-music { background-position:-390px 0px; }
+.spot-music.active { background-position:-390px -120px; }
+.spot-cmc { background-position:-520px -120px; }
+.spot-cmc.active { background-position:-520px -120px; }
+.spot-econ { background-position:-650px -120px; }
+.spot-econ.active { background-position:-650px -120px; }
+.spot-cba { background-position:-780px -120px; }
+.spot-cba.active { background-position:-780px -120px; }
+.spot-arki { background-position:-910px -120px; }
+.spot-arki.active { background-position:-910px -120px; }
+.spot-engg { background-position:-1040px -120px; }
+.spot-engg.active { background-position:-1040px -120px; }
+.spot-solair { background-position:-1170px -120px; }
+.spot-solair.active { background-position:-1170px -120px; }
+.spot-ncpag { background-position:-1300px -120px; }
+.spot-ncpag.active { background-position:-1300px -120px; }
+
+
 
 /* Distinguish the "cover page" visually other sections. */
 body.section-0 #map { opacity:0.5; }
@@ -274,7 +280,6 @@ map.ui.attribution.add()
     ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
 // Add Katips Route
 var ikotroute = d3layer().data(ikot);
-
 map.addLayer(ikotroute);
 
 map.addLayer(spots);
