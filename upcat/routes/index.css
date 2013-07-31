@@ -6,8 +6,8 @@
 body {
   background-image:url('oblebackground.png');
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position:right bottom;
-  background-attachment: fixed
 }
 
 nav {
@@ -16,7 +16,7 @@ nav {
   font-size: 13px;
   line-height: 1.5;
   margin-top: 25px;
-  margin-left: 100px;
+  margin-left: 5%;
   width: 500px;
   -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
      -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
