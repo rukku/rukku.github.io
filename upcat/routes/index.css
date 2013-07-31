@@ -95,7 +95,7 @@ nav {
 .menu-item ul a {
   margin-left: 20px;
   text-decoration: none;
-  color: black;
+  color: #5d6152;
   display: block;
   width: 500px;
 }
@@ -112,14 +112,14 @@ nav {
 /*First Item Styles*/
 .alpha p {
 	padding: 8px 12px;
-	color: black;
+	color: #5d6152;
 }
 
 .alpha p a {
-	color: black;
+	color: gray;
 	font-style: italic;
 }
 
 .alpha p a:hover {
-	color: black;
+	color: gray;
 }
