@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'/>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src='http://underscorejs.org/underscore-min.js'></script>
+<style>
+body {
+  margin:0px;
+  padding:0px;
+  font:normal 15px/20px Arial,sans-serif;
+  background:#fff;
+  }
+
+article {
+  width:33.3333%;
+  min-width:320px;
+  position:relative;
+  padding-top:40px;
+  padding-bottom:33.3333%;
+  }
+section {
+  padding:40px;
+  margin-left:40px;
+  position:relative;
+  transition:background 500ms, color 500ms;
+  -moz-transition:background 500ms, color 500ms;
+  -webkit-transition:background 500ms, color 500ms;
+  }
+section,
+section a {
+  color:#888;
+  color:rgba(128,128,128,0);
+  text-decoration:none;
+  text-shadow:rgba(64,64,64,1) 0px 0px 4px;
+  }
+section.active {
+  background:maroon;
+  color:#eee;
+  }
+section.active a { color:#eee; }
+section.active small { color:#aaa; }
+h1 { font-size:2em; line-height:1em; }
+h2 { font-size:1.3333em; }
+h1,h2 { margin:0px 0px 10px; }
+p { margin:0px; }
+
+.scroll {
+  position:absolute;
+  right:0px; bottom:0px;
+  font-size:10px;
+  text-transform:uppercase;
+  padding:5px 10px;
+  }
+.colophon {
+  display:block;
+  margin-top:10px;
+  }
+
+.cover:before {
+  content:'';
+  display:block;
+  width:120px; height:120px;
+  margin:0px auto 20px;
+  }
+.cover.active:before { background:url(sprite.png) 0px -120px no-repeat; }
+</style>
+</head>
+<body>
+
+<article>
+    <section id='cover' class='cover active'>
+    <h1>About Us</h1>
+    <p>BEST-Transit</p>
+    <small class='scroll'>Scroll ▼</small>  
+  </section>
+
+  <section id='katips'>
+    <h2>About Us</h2>
+    <p>
+All of us were friends in UP Diliman. A couple of years back we got to design the BAYAN-e-HAN disaster risk management web application that won in the 2010 UP BEST Tech Tournament.</p>
+<br>
+<p>
+We wanted to get together for something useful. Reigna mentioned that there’s a lot of buzz with regard to Transportation recently and how technology can be leveraged to help. That plus our penchant for late night work and brainstorming over cafe/dinner meet ups led to the UPCAT MAPS site.
+    </p>
+  </section>
+
+  <section id='music'>
+    <h2>College of Music</h2>
+ <table>
+  <tbody>
+    <tr>
+    <td class="c0"><p class="c5 c1"><span>RK Aranas</span></p></td>
+    <td class="c0"><p class="c1 c5"><span>Roy Canseco</span></p></td>
+    <td class="c0"><p class="c5 c1"><span>Sue Quirante</span></p></td>
+    <td class="c6"><p class="c5 c1"><span>Tin Tolod</span></p></td>
+    </tr>
+ </tbody>
+</table>
+<p class="c1 c2"><span></span></p><p class="c1 c2"><span></span></p><h3 class="c1"><span>consultant members </span></h3><p class="c1 c2"><span></span></p><p class="c1"><span class="c7">Doliente, Stephen</span><span>  </span></p><p class="c1"><span class="c7">Cabarle, Francis </span><span>    </span></p><p class="c1"><span class="c7">Macababad, Reigna Jewel Ritz</span><span>  </span></p><p class="c1"><span class="c7">Gaspay, Sandy Mae</span><span>
+  </section>
+</article>
+
+<script>
+// Array of story section elements.
+var sections = document.getElementsByTagName('section');
+
+// Helper to set the active section.
+var setActive = function(index, ease) {
+  _(sections).each(function(s) { s.className = s.className.replace(' active', '') });
+  sections[index].className += ' active';
+  return true;
+};
+
+// Bind to scroll events to find the active section.
+window.onscroll = _(function() {
+  // IE 8
+  if (window.pageYOffset === undefined) {
+    var y = document.documentElement.scrollTop;
+    var h = document.documentElement.clientHeight;
+  } else {
+    var y = window.pageYOffset;
+    var h = window.innerHeight;
+  }
+
+  // If scrolled to the very top of the page set the first section active.
+  if (y === 0) return setActive(0, true);
+
+  // Otherwise, conditionally determine the extent to which page must be
+  // scrolled for each section. The first section that matches the current
+  // scroll position wins and exits the loop early.
+  var memo = 0;
+  var buffer = (h * 0.3333);
+  var active = _(sections).any(function(el, index) {
+    memo += el.offsetHeight;
+    return y < (memo-buffer) ? setActive(index, true) : false;
+  });
+
+  // If no section was set active the user has scrolled past the last section.
+  // Set the last section active.
+  if (!active) setActive(sections.length - 1, true);
+}).debounce(10);
+</script>
+
+</body>
+</html>
